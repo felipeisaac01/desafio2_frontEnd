@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirme seus dados</title>
+    <link rel="stylesheet" href="confirmarDados.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Quantico:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <img src="imgs//Arrow - Right 2.png" class='icone'>
+        <input type="text" class='busca' placeholder="Pesquise filmes...">
+        <button link='#'> <!-- é # mesmo pro botao voltar pra mesma pagina? -->
+            <img src="imgs/Bookmark.png">
+            <span>Favoritos</span> 
+        </button>
+        <button>
+            <img src="imgs/Discount.png">
+            <span>Promoções</span> 
+        </button>
+        <div class="usuario">
+            <span>Bem-vindo, Felipe</span>
+            <img src="imgs/Numbuh_1.png" >
+        </div>
+    </div>
+    <div class="conteiner">
+        <img src="imgs/Social Media.png" alt="">
+        <form>
+            <div class="informacoes-iniciais">
+                <h2>Informações iniciais</h2>
+                <div>
+                    <label>
+                        Insira seu nome completo:
+                        <input type="text" placeholder="Ex: Felipe Isaac Ferreira">
+                    </label>
+                    <label>
+                        Insira seu e-mail:
+                        <input type="email" placeholder="Ex: felipeisaac@email.com">
+                    </label>
+                    <label>
+                        Telefone:
+                        <input type="text" inputmode="numeric" placeholder="Ex: (71) 9 9999-9999">
+                    </label>
+                </div>
+            </div>
+            <div class="informacoes-end">
+                <h2>Informações de endereço</h2>
+                <div>
+                    <label>
+                        CEP
+                        <input type="text" inputmode="numeric" placeholder="Ex: 00000-00">
+                    </label>
+                    <label>
+                        País
+                        <input type="text" placeholder="Ex: Brasil">
+                    </label>
+                    <label>
+                        Cidade
+                        <input type="text" placeholder="Ex: Salvador">
+                    </label>
+                    <label>
+                        Bairro
+                        <input type="text" placeholder="Ex: Barra">
+                    </label>
+                    <label>
+                        Número
+                        <input type="text" inputmode="numeric" placeholder="Ex: 45">
+                    </label>
+                </div> 
+            </div>
+            <div class="informacoes-pag">
+                <h2>Informações de pagamento</h2>
+                <div>
+                    <label>
+                        Número do cartão:
+                        <input type="text" inputmode="numeric" placeholder="Ex: 0000 0000 0000 0000">
+                    </label>
+                    <label>
+                        Nome do cartão:
+                        <input type="text" placeholder="Ex: FELIPE ISAAC" >
+                    </label>
+                    <label>
+                        Data de expiração:
+                        <input type="text" inputmode="numeric" placeholder="Ex: MM/YYYY">
+                    </label>
+                    <label>
+                        CVV:
+                        <input type="text" inputmode="numeric" placeholder="Ex: 000">
+                    </label>
+                </div>
+            </div>
+        </form>
+        <div class="sacola">
+            <div class='header-sacola'>
+                <img src="imgs/Bag.png">
+                Sacola
+            </div>
+            <div class="carrinho">
+                <!-- <div class="carrinho-filme">
+                    <img src="" class='poster-filme'>
+                    <div class="dados-filme">
+                        <span class='nome-filme'>teste</span>
+                        <span>2.99</span>
+                    </div>
+                    <div class="quantidade">
+                        <img src="imgs/add.png" alt="">
+                        <span class='qntd'>5</span>
+                        <img src="imgs/delete.png" alt="">
+                    </div>
+                </div> -->
+                <div class="subtotal">
+                    <span>Subtotal</span>
+                    <span class='preco-total'>4.85</span>
+                </div>
+                <label>
+                    Insira seu cupom
+                    <input type="text" placeholder="Cupom de desconto">
+                </label>
+                <button class='fechar-carrinho'>
+                    <span>Comprar agora</span>
+                    <span class='preco-total'>4.85</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src='desafio2.js'></script>
+</body>
+</html>

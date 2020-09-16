@@ -22,7 +22,7 @@ body {
 
 .busca {
     color:  #FDFDFD;
-    background-color: #1D2226;
+    background-color: #171B1E !important;
     border: none;
     font-size: 16px;
     padding: 16px;
@@ -69,7 +69,7 @@ body {
 .nevegacao {
     border: solid 1px green;
     width: 100%;
-    margin: 24px 35px 50px 70px;
+    margin: 40px 35px 50px 70px;
 }
 
 .banner {
@@ -87,7 +87,6 @@ body {
     position: absolute;
     right:0;
     bottom:-14px;
-    z-index: 150;
 }
 
 .banner > div  {
@@ -244,13 +243,13 @@ body {
 
 .sacola {
     position: sticky;
-    top:124px;
+    top:140px;
     background-color: #171B1E;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-width: 310px;
-    margin:  24px 24px 0 35px;
+    margin:  40px 24px 0 35px;
 }
 
 .header-sacola {
@@ -263,7 +262,7 @@ body {
     font-size: 1.5em;
     height: 72px;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .carrinho {
@@ -323,7 +322,7 @@ body {
     font-weight: 500; 
 }
 .carrinho > img {
-    margin: 40px 0;
+    margin: 20px 0;
 }
 .carrinho label {
     color: #FDFDFD; 
@@ -352,3 +351,4 @@ body {
     justify-content: space-between;
     align-self: stretch;  
 }
+
