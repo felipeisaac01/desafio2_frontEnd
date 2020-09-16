@@ -1,0 +1,354 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
+.header {
+    background-color: #0F1C26;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    height: 100px;
+}
+
+.busca {
+    color:  #FDFDFD;
+    background-color: #1D2226;
+    border: none;
+    font-size: 16px;
+    padding: 16px;
+    margin: 24px;
+    min-width: 25em;
+    background: url(imgs/Search.png) no-repeat right 10px center;
+}
+
+.busca::placeholder {
+    color: #FDFDFD;
+}
+
+.header > button {
+    color: #FDFDFD;
+    background-color: #0F1C26;
+    border: none;
+    font-weight: 500;
+    display:flex;
+    align-items: center;
+    font-size: 1em;
+}
+
+.header > button > span {
+    margin-left: 10px;
+}
+
+.usuario {
+    color: #FDFDFD;
+    display: flex;
+    align-items: center;
+}
+
+.usuario > img {
+    max-width: 60px;
+}
+
+.conteiner {
+    display: flex;
+    background-color: #1D2226;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.nevegacao {
+    border: solid 1px green;
+    width: 100%;
+    margin: 24px 35px 50px 70px;
+}
+
+.banner {
+    font-family:'Quantico', sans-serif;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+    background: url("imgs/Group 4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+.banner > img{
+    position: absolute;
+    right:0;
+    bottom:-14px;
+    z-index: 150;
+}
+
+.banner > div  {
+    margin: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.banner > span {
+    opacity: 0.2;
+    align-self: center;
+    border-right: 2px solid #F294D8;
+    height: 46px;
+    width: 0px;
+}
+
+.banner1 > span {
+    font-size: 40px;
+}
+
+.banner1 > div {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #0F0915;
+}
+
+.banner2 > span {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.banner2 > div {
+    display: flex;
+    align-items: center;
+}
+
+.banner2 > div > img {
+    margin-right: 10px;
+}
+
+.banner1     > div > img {
+    margin-right: 10px;
+}
+
+.topFilmes {
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.topFilmes > span, .TodosOsFilmes > span {
+    font-size: 1.5em;
+    color: #FDFDFD;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.filmes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: -12px;
+}
+
+.card {
+    margin: 12px;
+    border: gold solid 1px;
+    height: 300px;
+    width: 180px;
+    margin-bottom: 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 8px 6px;
+}
+
+.estrela-fav {
+    margin-bottom: auto;
+}
+
+#poster {
+    position: absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+}
+
+.card > div {
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+}
+
+.card > button {
+    border: none;
+    background-color: #A785ED;
+    color:#EEE6FF;
+    padding: 4px 8px;
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+}
+
+.nome-do-filme {
+    color: #FDFDFD;
+    bottom: 40px;
+    left: 8px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.nota-do-filme {
+    color: #FDFDFD;
+    bottom: 40px;
+    right: 8px;
+    color:#FBCD6E;
+    font-weight: bold;
+    font-size: 0.75em;
+}
+
+.TodosOsFilmes {
+    display: flex;
+    flex-direction: column;
+}
+
+.botoesGeneros {
+    display: flex;
+    margin-bottom: 24px;
+    justify-content: space-between;
+}
+
+.botoesGeneros > button {
+    flex-grow: 1;
+    border: 2px solid #4A4E51;
+    background-color: transparent;
+    color:  #4A4E51;
+    padding: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    max-width: 180px;
+}
+
+.botoesGeneros > button:hover {
+    border: 2px solid #E183C8;
+    color: #E183C8;
+}
+
+.sacola {
+    position: sticky;
+    top:124px;
+    background-color: #171B1E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 310px;
+    margin:  24px 24px 0 35px;
+}
+
+.header-sacola {
+    background-color: #A785ED;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FDFDFD;
+    font-size: 1.5em;
+    height: 72px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.carrinho {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px 24px;
+    align-items: center;
+    width: 100%;
+}
+
+.carrinho-filme {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #FDFDFD;
+    width: 100%; 
+}
+
+.poster-filme {
+    width: 45px;
+    height: 65px;
+    border: 1px solid gold;
+}
+
+.dados-filme {
+    margin-left: 16px;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nome-filme {
+    margin-bottom: 8px;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.quantidade {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.qntd {
+    margin: 0 16px;
+}
+
+.primeiroTexto {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #FDFDFD; 
+    margin-bottom: 6px;
+}
+
+.segundoTexto {
+    color: #CFD0D0;
+    font-weight: 500; 
+}
+.carrinho > img {
+    margin: 40px 0;
+}
+.carrinho label {
+    color: #FDFDFD; 
+    width: 100%;
+    font-size: 0.8em;
+}
+
+.carrinho input {
+    display: block;
+    width: 100%;
+    background-color: #0B1217;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px ;
+    background: url(imgs/Ticket.png) no-repeat right 8px center;
+}
+
+.fechar-carrinho {
+    padding: 16px;
+    margin-top: 24px;
+    border: none;
+    background-color: #E183C8;
+    color:#FDFDFD;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;  
+}
