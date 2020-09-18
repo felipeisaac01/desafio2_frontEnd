@@ -5,6 +5,10 @@
     
 }
 
+button {
+    outline: none;
+}
+
 body {
     font-family: 'Manrope', sans-serif;
 }
@@ -28,7 +32,7 @@ body {
     padding: 16px;
     margin: 24px;
     min-width: 25em;
-    background: url(imgs/Search.png) no-repeat right 10px center;
+    background: url(../imgs/Search.png) no-repeat right 10px center;
 }
 
 .busca::placeholder {
@@ -64,10 +68,10 @@ body {
     background-color: #1D2226;
     justify-content: space-between;
     align-items: flex-start;
+    flex-direction: row;
 }
 
 .nevegacao {
-    border: solid 1px green;
     width: 100%;
     margin: 40px 35px 50px 70px;
 }
@@ -77,7 +81,7 @@ body {
     height: 120px;
     margin: 0 auto;
     position: relative;
-    background: url("imgs/Group 4.png");
+    background: url("../imgs/Group 4.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -139,7 +143,7 @@ body {
     flex-direction: column;
 }
 
-.topFilmes > span, .TodosOsFilmes > span {
+.topFilmes > span, .todosOsFilmes > span {
     font-size: 1.5em;
     color: #FDFDFD;
     margin-bottom: 16px;
@@ -155,7 +159,6 @@ body {
 
 .card {
     margin: 12px;
-    border: gold solid 1px;
     height: 300px;
     width: 180px;
     margin-bottom: 24px;
@@ -164,6 +167,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     padding: 12px 8px 6px;
+    object-fit: contain;
 }
 
 .estrela-fav {
@@ -171,11 +175,9 @@ body {
 }
 
 #poster {
-    position: absolute;
-    top:0;
-    right:0;
-    left:0;
-    bottom:0;
+
+    width: 100%;
+    height: auto;
 }
 
 .card > div {
@@ -195,6 +197,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-self: stretch;
+}
+
+.card > button:hover {
+    background-color:#715E97;
+}
+
+#filmeNoCarrinho {
+    background-color: #898989 ;
 }
 
 .nome-do-filme {
@@ -225,6 +235,12 @@ body {
     justify-content: space-between;
 }
 
+#ativo {
+    border: 2px solid #E183C8;
+    color: #E183C8;
+    background-color: rgba(225, 131, 200, 0.2);
+}
+
 .botoesGeneros > button {
     flex-grow: 1;
     border: 2px solid #4A4E51;
@@ -249,6 +265,7 @@ body {
     flex-direction: column;
     align-items: center;
     min-width: 310px;
+    max-width: 350px;
     margin:  40px 24px 0 35px;
 }
 
@@ -268,7 +285,7 @@ body {
 .carrinho {
     display: flex;
     flex-direction: column;
-    padding: 0 16px 24px;
+    padding: 0 16px;
     align-items: center;
     width: 100%;
 }
@@ -279,12 +296,12 @@ body {
     align-items: center;
     color: #FDFDFD;
     width: 100%; 
+    margin: 8px 0;
 }
 
 .poster-filme {
     width: 45px;
     height: 65px;
-    border: 1px solid gold;
 }
 
 .dados-filme {
@@ -301,13 +318,23 @@ body {
 }
 
 .quantidade {
+    padding: 0 2px;
     margin-left: auto;
     display: flex;
     align-items: center;
 }
 
+.quantidade > button {
+    background-color: transparent;
+    border: none;
+}
+
 .qntd {
     margin: 0 16px;
+}
+
+.iconesQuantidade:hover {
+    background-color: rgba(107, 107, 107, 0.37);
 }
 
 .primeiroTexto {
@@ -324,25 +351,28 @@ body {
 .carrinho > img {
     margin: 20px 0;
 }
-.carrinho label {
+.sacola label {
     color: #FDFDFD; 
     width: 100%;
+    margin: 12px 16px;
+    padding: 0 16px;
     font-size: 0.8em;
 }
 
-.carrinho input {
+.sacola input {
+    color: #FDFDFD;
     display: block;
     width: 100%;
-    background-color: #0B1217;
+    background-color:#0B1217;
     border: none;
     padding: 8px 16px;
     font-size: 16px ;
-    background: url(imgs/Ticket.png) no-repeat right 8px center;
+    background: url(../imgs/Ticket.png) no-repeat right 8px center;
 }
 
 .fechar-carrinho {
     padding: 16px;
-    margin-top: 24px;
+    margin: 12px 16px 24px;
     border: none;
     background-color: #E183C8;
     color:#FDFDFD;

@@ -5,6 +5,10 @@
     
 }
 
+button {
+    outline: none;
+}
+
 body {
     font-family: 'Manrope', sans-serif;
     background-color: #1D2226;
@@ -12,7 +16,7 @@ body {
 
 /* editadndo o header */
 
-.header {
+/* .header {
     background-color: #0F1C26;
     display: flex;
     align-items: center;
@@ -60,7 +64,7 @@ body {
 
 .usuario > img {
     max-width: 60px;
-}
+} */
 
 /* editando o conteiner */
 
@@ -203,6 +207,7 @@ form label {
 }
 
 .carrinho input {
+    color:  #FDFDFD;
     display: block;
     width: 100%;
     background-color: #0B1217;
