@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirme seus dados</title>
-    <link rel="stylesheet" href="../css/confirmarDados.css">
+    <link rel="stylesheet" href="../css/formulario-dados.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/carrinho.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Quantico:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="header">
         <img src="../imgs//Arrow - Right 2.png" class='icone'>
         <input type="text" class='busca' placeholder="Pesquise filmes...">
-        <button link='#'> <!-- é # mesmo pro botao voltar pra mesma pagina? -->
+        <button link='#'>
             <img src="../imgs/Bookmark.png">
             <span>Favoritos</span> 
         </button>
@@ -98,34 +99,23 @@
                 Sacola
             </div>
             <div class="carrinho">
-                <!-- <div class="carrinho-filme">
-                    <img src="" class='poster-filme'>
-                    <div class="dados-filme">
-                        <span class='nome-filme'>teste</span>
-                        <span>2.99</span>
-                    </div>
-                    <div class="quantidade">
-                        <img src="../imgs/add.png" alt="">
-                        <span class='qntd'>5</span>
-                        <img src="../imgs/delete.png" alt="">
-                    </div>
-                </div> -->
-                <div class="subtotal">
-                    <span>Subtotal</span>
-                    <span class='preco-total'>4.85</span>
-                </div>
-                <label>
-                    Insira seu cupom
-                    <input type="text" placeholder="Cupom de desconto">
-                </label>
-                <button class='fechar-carrinho'>
-                    <span>Comprar agora</span>
-                    <span class='preco-total'>4.85</span>
-                </button>
+                
             </div>
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <span class='preco-total'></span>
+            </div>
+            <label>
+                Insira seu cupom
+                <input type="text" placeholder="Cupom de desconto">
+            </label>
+            <button class='fechar-carrinho'>
+                <span>Comprar agora</span>
+                <span class='preco-total'></span>
+            </button>
         </div>
     </div>
 
-    <script src='desafio2.js'></script>
+    <script src='../pagina-formulario.js'></script>
 </body>
 </html>

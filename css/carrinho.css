@@ -1,0 +1,133 @@
+.sacola {
+    position: sticky;
+    top:140px;
+    background-color: #171B1E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 310px;
+    max-width: 350px;
+    margin:  0 24px 0 35px;
+}
+
+.header-sacola {
+    background-color: #A785ED;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FDFDFD;
+    font-size: 1.5em;
+    height: 72px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.carrinho {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+    align-items: center;
+    width: 100%;
+}
+
+.carrinho-filme {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #FDFDFD;
+    width: 100%; 
+    margin: 8px 0;
+}
+
+.poster-filme {
+    width: 45px;
+    height: 65px;
+}
+
+.dados-filme {
+    margin-left: 16px;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nome-filme {
+    margin-bottom: 8px;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.quantidade {
+    padding: 0 2px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.quantidade > button {
+    background-color: transparent;
+    border: none;
+}
+
+.qntd {
+    margin: 0 16px;
+}
+
+.iconesQuantidade:hover {
+    background-color: rgba(107, 107, 107, 0.37);
+}
+
+.primeiroTexto {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #FDFDFD; 
+    margin-bottom: 6px;
+}
+
+.segundoTexto {
+    color: #CFD0D0;
+    font-weight: 500; 
+}
+.carrinho > img {
+    margin: 20px 0;
+}
+.sacola label {
+    color: #FDFDFD; 
+    flex-grow: 1;
+    margin: 12px 16px;
+    padding: 0 16px;
+    font-size: 0.8em;
+    width: 100%
+}
+
+.sacola input {
+    color: #FDFDFD;
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px ;
+    background: url(../imgs/Ticket.png) no-repeat right 8px center;
+    background-color:#0B1217 ;
+}
+
+.fechar-carrinho {
+    padding: 16px;
+    margin: 12px 16px 24px;
+    border: none;
+    background-color: #898989;
+    color:#FDFDFD;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;  
+}
+
+#botaoAtivo {
+    background-color: #E25EBF;
+}
+
+#botaoAtivo:hover {
+    background-color: #F29BB9;
+}

@@ -152,7 +152,7 @@ const adicionarBotaoDeFecharOCarrinho = () => {
     botao.classList.add('fechar-carrinho');
     botao.innerHTML = `<span>Confirme seus dados</span>
                        <span class='preco-total'></span>`
-    
+    botao.setAttribute('id', 'botaoAtivo')
     document.querySelector('.sacola').append(botao)
 
     botao.addEventListener('click', () => {

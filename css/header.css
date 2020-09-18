@@ -1,3 +1,19 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+button {
+    outline: none;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #1D2226;
+}
+
 .header {
     background-color: #0F1C26;
     display: flex;
@@ -11,13 +27,13 @@
 
 .busca {
     color:  #FDFDFD;
-    background-color: #171B1E !important;
     border: none;
     font-size: 16px;
     padding: 16px;
     margin: 24px;
     min-width: 25em;
     background: url(../imgs/Search.png) no-repeat right 10px center;
+    background-color: #171B1E;
 }
 
 .busca::placeholder {
@@ -46,4 +62,8 @@
 
 .usuario > img {
     max-width: 60px;
+}
+
+input:hover {
+    border: 1px solid #8C8C8C !important;
 }
