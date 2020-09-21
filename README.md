@@ -2,7 +2,8 @@
   
   <p>Esse foi o segundo desafio de Front-End do curso de Dev Full-Stack da Cubos Academy.</p>
   <br>
-# O desafio
+  
+<h2>O desafio</h2>
 
   <p>O desafio consistiu em fazer a interface e a lógica para o Front-End de um site de E-Commerce, utilizando HTML, css e javaScript.</p>
   
