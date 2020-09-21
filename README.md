@@ -16,4 +16,4 @@
     <li> Formulário de cadastro de dados de compra;
   </ul>
   
-   <p>Alguns itens ficaram apenas como ilustrativos, como os botões e a barra de busca na parte superior, visto que o foco do desafio para o prazo estipulado era, além da interface, a utilização das API's</p>
+   <p>Alguns itens ficaram apenas como ilustrativos, como os botões e a barra de busca na parte superior, visto que o foco do desafio para o prazo estipulado era, além da interface, a utilização das API's e o manejo do CSS e HTML a partir do javaScript e a interação do usuário com a página.</p>
