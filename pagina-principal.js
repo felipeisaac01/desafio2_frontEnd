@@ -158,7 +158,7 @@ const adicionarBotaoDeFecharOCarrinho = () => {
     botao.addEventListener('click', () => {
         const carrinhoFechado = {
             filmes: [],
-            cupom: inputPromoção.value
+            cupom: inputPromoção.value,
         };
 
         const arrayItemsNoCarrinho = divCarrinho.querySelectorAll('.carrinho-filme');
@@ -166,10 +166,12 @@ const adicionarBotaoDeFecharOCarrinho = () => {
             const novoItem = {
                 nome: arrayItemsNoCarrinho[x].querySelector('.nome-filme').innerText,
                 preco: Number(arrayItemsNoCarrinho[x].querySelector('.preco-filme').innerText),
-                quantidade: Number(arrayItemsNoCarrinho[x].querySelector('.qntd').innerText)
+                quantidade: Number(arrayItemsNoCarrinho[x].querySelector('.qntd').innerText),
+                poster: arrayItemsNoCarrinho[x].querySelector('.poster-filme').style.background
             };
+            carrinhoFechado.filmes.push(novoItem)
         };
-        localStorage.setItem('carrinho', carrinhoFechado);
+        localStorage.setItem('carrinho', JSON.stringify(carrinhoFechado));
         window.location.href = 'file:///C:/Users/felip/OneDrive/Documents/CURSO%20CUBOS/FRONT/SEGUNDA%20UNIDADE/desafio/desafio2_frontEnd/html/confirmarDados.html';
     });
 };
@@ -321,3 +323,7 @@ const diminuirTempo = () => {
     timer.innerText = `00:${minutos.toString().padStart(2, 0)}:${segundos.toString().padStart(2, 0)}`
 } 
 const idDoSetInterval = setInterval(diminuirTempo, 1000)
+
+document.querySelector('.sacola').querySelector('input').addEventListener('input', () => {
+    atualizarPrecoDoCarrinho()
+})

@@ -92,6 +92,21 @@
 .carrinho > img {
     margin: 20px 0;
 }
+
+.subtotal {
+    align-self: stretch;
+    display: flex;
+    color:#FDFDFD;
+    font-weight: 600;
+    padding: 0 16px;
+    margin-top: 42px;
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+}
+
 .sacola label {
     color: #FDFDFD; 
     flex-grow: 1;
@@ -110,6 +125,7 @@
     font-size: 16px ;
     background: url(../imgs/Ticket.png) no-repeat right 8px center;
     background-color:#0B1217 ;
+    border: 1px solid transparent
 }
 
 .fechar-carrinho {

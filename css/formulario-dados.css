@@ -30,6 +30,8 @@ form > div > div {
 
 label {
     flex-grow: 1;
+    min-width: 300px; 
+    max-width: 400px;
 }
 
 form label input {
@@ -38,9 +40,8 @@ form label input {
     border: none;
     padding: 8px 16px;
     margin: 5px 0;
-    min-width: 300px; 
-    max-width: 400px;
-    width: 100%
+    width: 100%;
+    border: 1px solid transparent;
 }
 
 form label {
