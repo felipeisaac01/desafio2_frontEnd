@@ -13,6 +13,8 @@ let todosOsFilmes = [];
 let filmesNoCarrinho = [];
 
 
+
+// calcula o preco do carrinho e testa possíveis cupons de desconto
 const atualizarPrecoDoCarrinho = () => {
     const arrayDeFilmesNoCarrinho = document.querySelectorAll('.carrinho > .carrinho-filme')
     let valorTotal = 0;
@@ -31,6 +33,7 @@ const atualizarPrecoDoCarrinho = () => {
     document.querySelector('.preco-total').innerText = valorTotal;
 }
 
+// cria os cards das listas de filmes
 const criarConteudoCard = (respostaJson, x) => {
     const card = document.createElement('div');
     card.classList.add('card');
@@ -52,9 +55,11 @@ const criarConteudoCard = (respostaJson, x) => {
     card.style.background = `url(${respostaJson.results[x].poster_path}) center center no-repeat`;
     card.style['background-size'] = 'cover';
 
-    return card
-}
+    return card;
+};
 
+// se a quantidade do filme no carrinho for maior do que 1, troca
+// para o sinal de menos, se for igual a 1, troca para a lixeira
 const atualizarImagemDeDiminuirValorNoCarrinho = (filme) => {
     const quantidade = filme.querySelector('.qntd').innerText;
     const ImgBotaoDiminuir = filme.querySelector('.botao-menos > img');
@@ -65,54 +70,62 @@ const atualizarImagemDeDiminuirValorNoCarrinho = (filme) => {
     } else {
         ImgBotaoDiminuir.removeAttribute('src');
         ImgBotaoDiminuir.setAttribute('src', "../imgs/delete.png");
-    }
-} 
+    };
+} ;
 
+// apaga o item da div carrinho e do array carrinho
 const apagarItemDoCarrinho = (filme,x) => {
-    filme.remove()
-    filmesNoCarrinho.splice(x,1)
+    filme.remove();
+    filmesNoCarrinho.splice(x,1);
 
     if (filmesNoCarrinho.length === 0) {
         divCarrinho.innerHTML = `<span class='primeiroTexto'>Sua sacola está vazia</span>
                                  <span class='segundoTexto'>Adicione filmes agora</span>
-                                 <img src='../imgs/Social Media.png'>`
+                                 <img src='../imgs/Social Media.png'>`;
 
-        document.querySelector('.fechar-carrinho').remove()
-    }
-}
+        document.querySelector('.fechar-carrinho').remove();
+    };
+};
 
+// aumenta a quantidade do item no carrinho
 const aumentarQuantidadeDoItemNoCarrinho = (idDoFilmeAAumentarQuantidade) => { 
-    const arrayItemsNoCarrinho = divCarrinho.querySelectorAll('.carrinho-filme')
+    const arrayItemsNoCarrinho = divCarrinho.querySelectorAll('.carrinho-filme');
+
     let filmeASerAumentado;
     for (let x = 0; x < arrayItemsNoCarrinho.length; x++) {
         if (Number(idDoFilmeAAumentarQuantidade) === Number(arrayItemsNoCarrinho[x].id)) {
             filmeASerAumentado = arrayItemsNoCarrinho[x];
-            let quantidade = Number(filmeASerAumentado.querySelector('.qntd').innerText)
+            let quantidade = Number(filmeASerAumentado.querySelector('.qntd').innerText);
             quantidade++;
             filmeASerAumentado.querySelector('.qntd').innerText = quantidade;
-        }
-    }
-    atualizarImagemDeDiminuirValorNoCarrinho(filmeASerAumentado)
-}
+        };
+    };
+    atualizarImagemDeDiminuirValorNoCarrinho(filmeASerAumentado);
+};
 
+//diminui a quantidade do item no carrinho se a quantidade for maior do que um;
+//caso seja menor, apaga o item do carrinho
 const diminuirQuantidadeDoItemNoCarrinho = (idDoFilmeADiminuirQuantidade) => { 
-    const arrayItemsNoCarrinho = divCarrinho.querySelectorAll('.carrinho-filme')
+    const arrayItemsNoCarrinho = divCarrinho.querySelectorAll('.carrinho-filme');
+
     let filmeASerDiminuido;
     for (let x = 0; x < arrayItemsNoCarrinho.length; x++) {
         if (Number(idDoFilmeADiminuirQuantidade) === Number(arrayItemsNoCarrinho[x].id)) {
             filmeASerDiminuido = arrayItemsNoCarrinho[x];
-            let quantidade = Number(filmeASerDiminuido.querySelector('.qntd').innerText)
+            let quantidade = Number(filmeASerDiminuido.querySelector('.qntd').innerText);
             quantidade--;
+
             if (quantidade < 1) {
-                apagarItemDoCarrinho(filmeASerDiminuido, x)
+                apagarItemDoCarrinho(filmeASerDiminuido, x);
             } else {
                 filmeASerDiminuido.querySelector('.qntd').innerText = quantidade;
-            }
-        }
-    }
-    atualizarImagemDeDiminuirValorNoCarrinho(filmeASerDiminuido)
-}
+            };
+        };
+    };
+    atualizarImagemDeDiminuirValorNoCarrinho(filmeASerDiminuido);
+};
 
+// define o innerHTML do item do filme no carrinho e adiciona as informacoes necessárias
 const inserirHTMLAoItemDoCarrinho = (itemFilmeCarrinho, filme) => {
     itemFilmeCarrinho.innerHTML = `<div class='poster-filme' style='background: url("${filme.poster_path}") center center / cover no-repeat;'></div>
                                     <div class="dados-filme">
@@ -126,34 +139,36 @@ const inserirHTMLAoItemDoCarrinho = (itemFilmeCarrinho, filme) => {
                                     </div>`;
 }
 
+//cria a div do item do filme no carrinho
 const adicionarFilmesNoCarrinho = (filme) => {
-        let itemFilmeCarrinho = document.createElement('div') 
+        let itemFilmeCarrinho = document.createElement('div') ;
         itemFilmeCarrinho.classList.add('carrinho-filme');
-        itemFilmeCarrinho.setAttribute('id', filme.id)
+        itemFilmeCarrinho.setAttribute('id', filme.id);
 
-        inserirHTMLAoItemDoCarrinho(itemFilmeCarrinho, filme)
+        inserirHTMLAoItemDoCarrinho(itemFilmeCarrinho, filme);
         
-        const botaoAumentar = itemFilmeCarrinho.querySelector('.botao-mais')
-        const botaoDiminuir = itemFilmeCarrinho.querySelector('.botao-menos')
+        const botaoAumentar = itemFilmeCarrinho.querySelector('.botao-mais');
+        const botaoDiminuir = itemFilmeCarrinho.querySelector('.botao-menos');
         botaoAumentar.addEventListener('click', () => {
-            aumentarQuantidadeDoItemNoCarrinho(itemFilmeCarrinho.id)
-            atualizarPrecoDoCarrinho()
-        })
+            aumentarQuantidadeDoItemNoCarrinho(itemFilmeCarrinho.id);
+            atualizarPrecoDoCarrinho();
+        });
         botaoDiminuir.addEventListener('click', () => {
-            diminuirQuantidadeDoItemNoCarrinho(itemFilmeCarrinho.id)
-            atualizarPrecoDoCarrinho()
-        })
+            diminuirQuantidadeDoItemNoCarrinho(itemFilmeCarrinho.id);
+            atualizarPrecoDoCarrinho();
+        });
         
         divCarrinho.append(itemFilmeCarrinho)
-}
+};
 
+// adiciona o botao de fechar o carrinho e suas interatividades
 const adicionarBotaoDeFecharOCarrinho = () => {
     const botao = document.createElement('button');
     botao.classList.add('fechar-carrinho');
     botao.innerHTML = `<span>Confirme seus dados</span>
-                       <span class='preco-total'></span>`
-    botao.setAttribute('id', 'botaoAtivo')
-    document.querySelector('.sacola').append(botao)
+                       <span class='preco-total'></span>`;
+    botao.setAttribute('id', 'botaoAtivo');
+    document.querySelector('.sacola').append(botao);
 
     botao.addEventListener('click', () => {
         const carrinhoFechado = {
@@ -169,47 +184,50 @@ const adicionarBotaoDeFecharOCarrinho = () => {
                 quantidade: Number(arrayItemsNoCarrinho[x].querySelector('.qntd').innerText),
                 poster: arrayItemsNoCarrinho[x].querySelector('.poster-filme').style.background
             };
-            carrinhoFechado.filmes.push(novoItem)
+            carrinhoFechado.filmes.push(novoItem);
         };
         localStorage.setItem('carrinho', JSON.stringify(carrinhoFechado));
         window.location.href = 'file:///C:/Users/felip/OneDrive/Documents/CURSO%20CUBOS/FRONT/SEGUNDA%20UNIDADE/desafio/desafio2_frontEnd/html/confirmarDados.html';
     });
 };
 
+// adiciona a funcionalidade do botão do card do filme na lista, para adicionar o item
+// do filme ao carrinho
 const adicionarInteracaoDoBotaoDeAdicionarFilmeAoCarrinho = (card, listaDeFilmes) => {
-    const botao = card.querySelector('button')
-    const idDoFilme = botao.id
+    const botao = card.querySelector('button');
+    const idDoFilme = botao.id;
 
     botao.addEventListener('click', () => {
         if (filmesNoCarrinho.length === 0) {
-
             const listaDeFilmesFiltrada = listaDeFilmes.filter(filme => {
-                return filme.id === Number(idDoFilme)
-            })
-            filmesNoCarrinho.push(listaDeFilmesFiltrada[0])
+                return filme.id === Number(idDoFilme);
+            });
+            filmesNoCarrinho.push(listaDeFilmesFiltrada[0]);
             divCarrinho.innerHTML = '';
-            adicionarFilmesNoCarrinho(filmesNoCarrinho[filmesNoCarrinho.length-1])
-            adicionarBotaoDeFecharOCarrinho()
+            adicionarFilmesNoCarrinho(filmesNoCarrinho[filmesNoCarrinho.length-1]);
+            adicionarBotaoDeFecharOCarrinho();
         } else {
             let existente = false;
             for (let x = 0; x < filmesNoCarrinho.length; x++) {
                 if (filmesNoCarrinho[x].id === Number(idDoFilme)) {
                     existente = true;
-                    aumentarQuantidadeDoItemNoCarrinho(filmesNoCarrinho[x].id)
-                } 
-            }
+                    aumentarQuantidadeDoItemNoCarrinho(filmesNoCarrinho[x].id);
+                };
+            };
 
             if(!existente) {
                 const listaDeFilmesFiltrada = listaDeFilmes.filter(filme => {
-                    return filme.id === Number(idDoFilme)
-                })
-                filmesNoCarrinho.push(listaDeFilmesFiltrada[0])
-                adicionarFilmesNoCarrinho(filmesNoCarrinho[filmesNoCarrinho.length-1])
-            }
-        } 
-        atualizarPrecoDoCarrinho()
-    })
-}
+                    return filme.id === Number(idDoFilme);
+                });
+                filmesNoCarrinho.push(listaDeFilmesFiltrada[0]);
+                adicionarFilmesNoCarrinho(filmesNoCarrinho[filmesNoCarrinho.length-1]);
+            };
+        };
+        atualizarPrecoDoCarrinho();
+    });
+};
+
+
 
 //criando lista dos 5 top filmes
 fetch('https://tmdb-proxy-workers.vhfmag.workers.dev/3/discover/movie?language=pt-BR')
@@ -324,6 +342,7 @@ const diminuirTempo = () => {
 } 
 const idDoSetInterval = setInterval(diminuirTempo, 1000)
 
+// toda vez que digitarem no input do carrinho, ele testa se o cupom inserido existe
 document.querySelector('.sacola').querySelector('input').addEventListener('input', () => {
-    atualizarPrecoDoCarrinho()
-})
+    atualizarPrecoDoCarrinho();
+});
