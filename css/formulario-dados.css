@@ -42,6 +42,7 @@ form label input {
     margin: 5px 0;
     width: 100%;
     border: 1px solid transparent;
+    color: #FDFDFD;
 }
 
 form label {

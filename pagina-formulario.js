@@ -49,7 +49,34 @@ sacola.querySelector('input').addEventListener('input', () => {
     calcularValor()
 })
 
-sacola.querySelector('input').value = itemsNoCarrinho.cupom
+sacola.querySelector('input').value = itemsNoCarrinho.cupom;
 
+const arrayInputsForm = document.querySelectorAll('form input');
+arrayInputsForm.forEach(input => {
+    input.addEventListener('input', () => {
+        let completo = true;
 
+        arrayInputsForm.forEach(input => {
+
+            if (input.value === '') {
+                completo = false;
+            };
+        });
+
+        if (completo) {
+            sacola.querySelector('button').setAttribute('id', 'botaoAtivo');
+        } else {
+            sacola.querySelector('button').removeAttribute('id')
+        };
+    });
+});
+
+sacola.querySelector('button').addEventListener('click', () => {
+    
+    if (sacola.querySelector('button').getAttribute('id') === 'botaoAtivo') {
+        window.location.href = 'file:///C:/Users/felip/OneDrive/Documents/CURSO%20CUBOS/FRONT/SEGUNDA%20UNIDADE/desafio/desafio2_frontEnd/html/pedidoConcluido.html'
+    } else {
+        alert('O formulário não está completo!')
+    }
+})
 
